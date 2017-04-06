@@ -14,6 +14,12 @@ Ext.define('compare.view.main.Main', {
         'Ext.window.MessageBox',
         'compare.view.main.MainController',
         'compare.view.main.MainModel',
+        'compare.view.list.HouseholType',
+        'compare.view.list.Name',
+        'compare.view.list.Nation',
+        'compare.view.list.Notexist',
+        'compare.view.list.PersonStatus',
+        'compare.view.list.Sex',
         'compare.view.list.List'
     ],
 
@@ -81,5 +87,53 @@ Ext.define('compare.view.main.Main', {
         items: [{
             xtype: 'mainlist'
         }]
-    }]
+    },
+        {
+            title: '不存在的数据',
+            iconCls: 'fa-home',
+            // The following grid shares a store with the classic version's grid as well!
+            items: [{
+                xtype: 'mainNotExist'
+            }]
+        },
+        {
+            title: '姓名错误',
+            iconCls: 'fa-home',
+            // The following grid shares a store with the classic version's grid as well!
+            items: [{
+                xtype: 'mainName'
+            }]
+        },
+        {
+            title: '民族错误',
+            iconCls: 'fa-home',
+            // The following grid shares a store with the classic version's grid as well!
+            items: [{
+                xtype: 'mainNation'
+            }]
+        },
+        {
+            title: '性别错误',
+            iconCls: 'fa-home',
+            // The following grid shares a store with the classic version's grid as well!
+            items: [{
+                xtype: 'mainSex'
+            }]
+        },
+        {
+            title: '人员类型不对',
+            iconCls: 'fa-home',
+            // The following grid shares a store with the classic version's grid as well!
+            items: [{
+                xtype: 'mainPersonStatus'
+            }]
+        },
+        {
+            title: '户类型不对',
+            iconCls: 'fa-home',
+            // The following grid shares a store with the classic version's grid as well!
+            items: [{
+                xtype: 'mainHouseholType'
+            }]
+        }]
 });
