@@ -24,6 +24,7 @@ Ext.define('compare.view.list.Nation', {
         tooltip: 'Show filter data for the store',
         handler: 'onShowFilters'
     }],
+    store : Ext.create('compare.store.FpbStore'),
     columns: [{
         text: '县(市、区、旗)',
         dataIndex: 'county',

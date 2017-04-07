@@ -2,6 +2,7 @@ package com.fupin.web;
 
 import com.fupin.domain.FpbData;
 import com.fupin.domain.PcsData;
+import com.fupin.domain.ViewInfo;
 import com.fupin.service.PageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -56,7 +57,90 @@ public class MainController {
         map.put("data",pcsDatas.getContent());
         return map;
     }
-
+    /**
+     * 获取所有数据.
+     * @return
+     */
+    @RequestMapping("/findAllName")
+    @ResponseBody
+    public Map<String,ArrayList> findNameAll(int start, int limit){
+        // 内存数据库操作
+        Map map =new HashMap<String,FpbData>();
+       Page<ViewInfo> pcsDatas=pageService.getName(start,limit);
+        map.put("totalRecord",pcsDatas.getTotalElements());
+        map.put("data",pcsDatas.getContent());
+        return map;
+    }
+    /**
+     * 获取所有数据.
+     * @return
+     */
+    @RequestMapping("/findAllSex")
+    @ResponseBody
+    public Map<String,ArrayList> findSexAll(int start, int limit){
+        // 内存数据库操作
+        Map map =new HashMap<String,FpbData>();
+        Page<ViewInfo> pcsDatas=pageService.getSex(start,limit);
+        map.put("totalRecord",pcsDatas.getTotalElements());
+        map.put("data",pcsDatas.getContent());
+        return map;
+    }
+    /**
+     * 获取所有数据.
+     * @return
+     */
+    @RequestMapping("/findAllNation")
+    @ResponseBody
+    public Map<String,ArrayList> findNationAll(int start, int limit){
+        // 内存数据库操作
+        Map map =new HashMap<String,FpbData>();
+        Page<ViewInfo> pcsDatas=pageService.getNation(start,limit);
+        map.put("totalRecord",pcsDatas.getTotalElements());
+        map.put("data",pcsDatas.getContent());
+        return map;
+    }
+    /**
+     * 获取所有数据.
+     * @return
+     */
+    @RequestMapping("/findAllHouseholType")
+    @ResponseBody
+    public Map<String,ArrayList> HouseholType(int start, int limit){
+        // 内存数据库操作
+        Map map =new HashMap<String,FpbData>();
+        Page<ViewInfo> pcsDatas=pageService.getHouseholType(start,limit);
+        map.put("totalRecord",pcsDatas.getTotalElements());
+        map.put("data",pcsDatas.getContent());
+        return map;
+    }
+    /**
+     * 获取所有数据.
+     * @return
+     */
+    @RequestMapping("/findAllPersonStatus")
+    @ResponseBody
+    public Map<String,ArrayList> findPersonStatusAll(int start, int limit){
+        // 内存数据库操作
+        Map map =new HashMap<String,FpbData>();
+        Page<ViewInfo> pcsDatas=pageService.getPersonStatus(start,limit);
+        map.put("totalRecord",pcsDatas.getTotalElements());
+        map.put("data",pcsDatas.getContent());
+        return map;
+    }
+    /**
+     * 获取所有数据.
+     * @return
+     */
+    @RequestMapping("/findAllNotexist")
+    @ResponseBody
+    public Map<String,ArrayList> findNotexistAll(int start, int limit){
+        // 内存数据库操作
+        Map map =new HashMap<String,FpbData>();
+        Page<ViewInfo> pcsDatas=pageService.getNotexist(start,limit);
+        map.put("totalRecord",pcsDatas.getTotalElements());
+        map.put("data",pcsDatas.getContent());
+        return map;
+    }
     @RequestMapping("/delete")
     @ResponseBody
     public Map  delete(){
