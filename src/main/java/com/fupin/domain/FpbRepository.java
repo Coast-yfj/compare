@@ -27,14 +27,14 @@ public interface FpbRepository extends PagingAndSortingRepository<FpbData,Long> 
     public Page<ViewInfo> queryNation(Pageable pageable)  ;
 
     @Query(value = "select  new  com.fupin.domain.ViewInfo(f,p) from    com.fupin.domain.FpbData  f," +
-            "com.fupin.domain.PcsData   p where p.IDENTIFICATION_NUMBER =substring (f.IDENTIFICATION_NUMBER,0,18)  and not(p.SEX=f.SEX) and p.NATION in ('死亡','迁出（离开）本地') ")
+            "com.fupin.domain.PcsData   p where p.IDENTIFICATION_NUMBER =substring (f.IDENTIFICATION_NUMBER,0,18)   and p.PERSON_STATUS in ('死亡','迁出（离开）本地') ")
     public Page<ViewInfo> queryPersonStatus(Pageable pageable);
 
     @Query(value = "select  new  com.fupin.domain.ViewInfo(f,p) from    com.fupin.domain.FpbData  f," +
-            "com.fupin.domain.PcsData   p where p.IDENTIFICATION_NUMBER =substring (f.IDENTIFICATION_NUMBER,0,18)  and not(p.SEX=f.SEX) and p.HOUSEHOL_TYPE='非农业家庭户口' ")
+            "com.fupin.domain.PcsData   p where p.IDENTIFICATION_NUMBER =substring (f.IDENTIFICATION_NUMBER,0,18)   and p.HOUSEHOL_TYPE='非农业家庭户口' ")
     public Page<ViewInfo> queryHouseholType(Pageable pageable);
 
-    @Query("select  f from FpbData f WHERE  not EXISTS" +
-            " (SELECT  1 from PcsData p WHERE  p.IDENTIFICATION_NUMBER=substring(f.IDENTIFICATION_NUMBER,0,18))")
-    public Page<ViewInfo> queryNotexist(Pageable pageable);
+    @Query("select  f from FpbData f WHERE  not exists" +
+            " (SELECT  p.IDENTIFICATION_NUMBER from PcsData p WHERE  p.IDENTIFICATION_NUMBER=substring(f.IDENTIFICATION_NUMBER,0,18))")
+    public Page<FpbData> queryNotexist(Pageable pageable);
 }

@@ -80,6 +80,9 @@ Ext.define('compare.view.main.Main', {
         }
     },
 
+    listeners: {
+        beforetabchange: 'onMenuClick'
+     },
     items: [{
         title: '数据比较',
         iconCls: 'fa-home',
@@ -136,4 +139,5 @@ Ext.define('compare.view.main.Main', {
                 xtype: 'mainHouseholType'
             }]
         }]
+
 });

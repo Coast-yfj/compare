@@ -19,4 +19,19 @@ public class ViewInfo implements Serializable {
     public ViewInfo() {
     }
 
+    public FpbData getFpbData() {
+        return fpbData;
+    }
+
+    public void setFpbData(FpbData fpbData) {
+        this.fpbData = fpbData;
+    }
+
+    public PcsData getPcsData() {
+        return pcsData;
+    }
+
+    public void setPcsData(PcsData pcsData) {
+        this.pcsData = pcsData;
+    }
 }

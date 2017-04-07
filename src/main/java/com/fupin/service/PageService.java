@@ -58,11 +58,12 @@ public class PageService {
         Page<ViewInfo> sourceCodes = this.fpbRepository.queryPersonStatus(request);
         return sourceCodes;
     }
-    public Page<ViewInfo> getNotexist(int pageNumber, int pageSize){
+    public Page<FpbData> getNotexist(int pageNumber, int pageSize){
         PageRequest request = this.buildPageRequest(pageNumber, pageSize);
-        Page<ViewInfo> sourceCodes = this.fpbRepository.queryNotexist(request);
+        Page<FpbData> sourceCodes = this.fpbRepository.queryNotexist(request);
         return sourceCodes;
     }
+
     public  void  del() throws  Exception{
         this.pcsRepository.deleteAll();
         this.fpbRepository.deleteAll();

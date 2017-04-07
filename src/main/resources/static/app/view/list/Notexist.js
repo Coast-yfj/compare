@@ -22,9 +22,11 @@ Ext.define('compare.view.list.Notexist', {
     tbar: [{
         text: '导出Execl',
         tooltip: 'Show filter data for the store',
-        handler: 'onShowFilters'
+        handler: function () {
+            window.location.href= '/exportNotExist.do'
+        }
     }],
-    store : Ext.create('compare.store.FpbStore'),
+    store : Ext.create('compare.store.NotexistStore'),
     columns: [{
         text: '县(市、区、旗)',
         dataIndex: 'county',

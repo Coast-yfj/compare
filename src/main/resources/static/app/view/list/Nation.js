@@ -14,17 +14,18 @@ Ext.define('compare.view.list.Nation', {
 
     requires: [
         'Ext.toolbar.Paging',
-        'Ext.ux.ProgressBarPager',
-        'compare.view.list.FpbGrid',
-        'compare.view.list.PcsGrid'
+        'Ext.ux.ProgressBarPager'
+
     ],
 
     tbar: [{
         text: '导出Execl',
         tooltip: 'Show filter data for the store',
-        handler: 'onShowFilters'
+        handler: function () {
+            window.location.href= '/exportNation.do'
+        }
     }],
-    store : Ext.create('compare.store.FpbStore'),
+    store : Ext.create('compare.store.NationStore'),
     columns: [{
         text: '县(市、区、旗)',
         dataIndex: 'county',

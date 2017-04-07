@@ -14,17 +14,17 @@ Ext.define('compare.view.list.HouseholType', {
 
     requires: [
         'Ext.toolbar.Paging',
-        'Ext.ux.ProgressBarPager',
-        'compare.view.list.FpbGrid',
-        'compare.view.list.PcsGrid'
+        'Ext.ux.ProgressBarPager'
     ],
 
     tbar: [{
         text: '导出Execl',
         tooltip: 'Show filter data for the store',
-        handler: 'onShowFilters'
+        handler: function () {
+            window.location.href= '/exportHouseholType.do'
+        }
     }],
-    store : Ext.create('compare.store.FpbStore'),
+    store : Ext.create('compare.store.HouseholTypeStore'),
     columns: [{
         text: '县(市、区、旗)',
         dataIndex: 'county',

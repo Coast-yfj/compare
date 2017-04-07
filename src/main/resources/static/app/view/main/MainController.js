@@ -118,5 +118,21 @@ Ext.define('compare.view.main.MainController', {
                 Ext.widget('mainlist').items.items[1].store.reload();
             }
         });
+    },
+
+    onMenuClick: function (tabs, newTab, oldTab) {
+        if(newTab.title=='户类型不对'){
+            Ext.widget('mainHouseholType').store.reload();
+        } else  if(newTab.title=='不存在的数据'){
+            Ext.widget('mainNotExist').store.reload();
+        }else  if(newTab.title=='姓名错误'){
+            Ext.widget('mainName').store.reload();
+        }else  if(newTab.title=='民族错误'){
+            Ext.widget('mainNation').store.reload();
+        }else  if(newTab.title=='性别错误'){
+            Ext.widget('mainSex').store.reload();
+        }else  if(newTab.title=='人员类型不对'){
+            Ext.widget('mainPersonStatus').store.reload();
+        }
     }
 });

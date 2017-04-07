@@ -16,6 +16,5 @@ Ext.define('compare.store.NameStore', {
             rootProperty : 'data',// 数据(不配置的话无法接收数据)，返回的key为data
             totalProperty : 'totalRecord'// 记录数(不配置的话无法翻页)，返回的key为totalRecord
         })
-    }),
-    autoLoad: true
+    })
 });

@@ -9,7 +9,7 @@ Ext.define('compare.view.list.PcsGrid',{
     requires: [
         'Ext.toolbar.Paging',
         'compare.store.PcsStore'
-        //  'Ext.ux.ProgressBarPager'
+
     ],
     title: '派出所数据',
     width: 650,
@@ -77,7 +77,6 @@ Ext.define('compare.view.list.PcsGrid',{
     bbar: {
         xtype: 'pagingtoolbar',
         displayInfo: true
-        // plugins: Ext.create('Ext.ux.ProgressBarPager', {})
     }
 
 });

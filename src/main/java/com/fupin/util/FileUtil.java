@@ -30,10 +30,7 @@ public class FileUtil {
             fileDir.mkdirs();
         }
 
-        ExportParams params = new ExportParams(title, sheetName);
-        Workbook  workbook=null;
-          workbook=  ExcelExportUtil.exportExcel(params,
-                FpbData.class, list);
+        Workbook  workbook= createWorkbook(title,sheetName,list);
          fileName =fileName+ new java.text.SimpleDateFormat("yyyyMMddHHmmss").format(new Date()) ;
         String filePath = saveDir+ File.separator+fileName+".xls";
         FileOutputStream fout = new FileOutputStream(filePath);
@@ -44,5 +41,12 @@ public class FileUtil {
         ostream.close();
         fout.close();
         return fileName+".xls";
+    }
+
+    public  static Workbook   createWorkbook(String title,String sheetName,List<FpbData> list){
+        ExportParams params = new ExportParams(title, sheetName);
+        Workbook workbook=  ExcelExportUtil.exportExcel(params,
+                FpbData.class, list);
+        return workbook;
     }
 }

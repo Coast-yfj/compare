@@ -4,6 +4,7 @@ import com.fupin.domain.FpbData;
 import com.fupin.domain.PcsData;
 import com.fupin.domain.ViewInfo;
 import com.fupin.service.PageService;
+import com.fupin.util.BeanUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
@@ -68,7 +69,7 @@ public class MainController {
         Map map =new HashMap<String,FpbData>();
        Page<ViewInfo> pcsDatas=pageService.getName(start,limit);
         map.put("totalRecord",pcsDatas.getTotalElements());
-        map.put("data",pcsDatas.getContent());
+        map.put("data", BeanUtil.AssemblyUtil(pcsDatas));
         return map;
     }
     /**
@@ -82,7 +83,7 @@ public class MainController {
         Map map =new HashMap<String,FpbData>();
         Page<ViewInfo> pcsDatas=pageService.getSex(start,limit);
         map.put("totalRecord",pcsDatas.getTotalElements());
-        map.put("data",pcsDatas.getContent());
+        map.put("data",BeanUtil.AssemblyUtil(pcsDatas));
         return map;
     }
     /**
@@ -96,7 +97,7 @@ public class MainController {
         Map map =new HashMap<String,FpbData>();
         Page<ViewInfo> pcsDatas=pageService.getNation(start,limit);
         map.put("totalRecord",pcsDatas.getTotalElements());
-        map.put("data",pcsDatas.getContent());
+        map.put("data",BeanUtil.AssemblyUtil(pcsDatas));
         return map;
     }
     /**
@@ -110,7 +111,7 @@ public class MainController {
         Map map =new HashMap<String,FpbData>();
         Page<ViewInfo> pcsDatas=pageService.getHouseholType(start,limit);
         map.put("totalRecord",pcsDatas.getTotalElements());
-        map.put("data",pcsDatas.getContent());
+        map.put("data",BeanUtil.AssemblyUtil(pcsDatas));
         return map;
     }
     /**
@@ -124,7 +125,7 @@ public class MainController {
         Map map =new HashMap<String,FpbData>();
         Page<ViewInfo> pcsDatas=pageService.getPersonStatus(start,limit);
         map.put("totalRecord",pcsDatas.getTotalElements());
-        map.put("data",pcsDatas.getContent());
+        map.put("data",BeanUtil.AssemblyUtil(pcsDatas));
         return map;
     }
     /**
@@ -136,7 +137,7 @@ public class MainController {
     public Map<String,ArrayList> findNotexistAll(int start, int limit){
         // 内存数据库操作
         Map map =new HashMap<String,FpbData>();
-        Page<ViewInfo> pcsDatas=pageService.getNotexist(start,limit);
+        Page<FpbData> pcsDatas=pageService.getNotexist(start,limit);
         map.put("totalRecord",pcsDatas.getTotalElements());
         map.put("data",pcsDatas.getContent());
         return map;

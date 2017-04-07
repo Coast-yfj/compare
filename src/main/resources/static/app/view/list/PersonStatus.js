@@ -22,9 +22,11 @@ Ext.define('compare.view.list.PersonStatus', {
     tbar: [{
         text: '导出Execl',
         tooltip: 'Show filter data for the store',
-        handler: 'onShowFilters'
+        handler: function () {
+            window.location.href= '/exportPersonStatus.do'
+        }
     }],
-    store : Ext.create('compare.store.FpbStore'),
+    store : Ext.create('compare.store.PersonStatusStore'),
     columns: [{
         text: '县(市、区、旗)',
         dataIndex: 'county',
