@@ -19,7 +19,7 @@ public class PageService {
     private PcsRepository pcsRepository;
     //构建PageRequest
     private PageRequest buildPageRequest(int pageNumber, int pagzSize) {
-        return new PageRequest(pageNumber , pagzSize, null);
+        return new PageRequest(pageNumber-1 , pagzSize, null);
     }
 
     public Page<FpbData> getFpb(int pageNumber, int pageSize) {

@@ -36,10 +36,10 @@ public class MainController {
      */
     @RequestMapping("/findAll")
     @ResponseBody
-    public Map<String,ArrayList> findAll(int start, int limit){
+    public Map<String,ArrayList> findAll(int start, int limit,int page){
         // 内存数据库操作
         Map map =new HashMap<String,FpbData>();
-        Page<FpbData> fpbDatas=pageService.getFpb(start,limit);
+        Page<FpbData> fpbDatas=pageService.getFpb(page,limit);
         map.put("totalRecord",fpbDatas.getTotalElements());
         map.put("data",fpbDatas.getContent());
         return map;
@@ -50,10 +50,10 @@ public class MainController {
      */
     @RequestMapping("/findPcsAll")
     @ResponseBody
-    public Map<String,ArrayList> findPcsAll(int start, int limit){
+    public Map<String,ArrayList> findPcsAll(int start, int limit,int page){
         // 内存数据库操作
         Map map =new HashMap<String,FpbData>();
-        Page<PcsData> pcsDatas=pageService.getPcs(start,limit);
+        Page<PcsData> pcsDatas=pageService.getPcs(page,limit);
         map.put("totalRecord",pcsDatas.getTotalElements());
         map.put("data",pcsDatas.getContent());
         return map;
@@ -64,10 +64,10 @@ public class MainController {
      */
     @RequestMapping("/findAllName")
     @ResponseBody
-    public Map<String,ArrayList> findNameAll(int start, int limit){
+    public Map<String,ArrayList> findNameAll(int start, int limit,int page){
         // 内存数据库操作
         Map map =new HashMap<String,FpbData>();
-       Page<ViewInfo> pcsDatas=pageService.getName(start,limit);
+       Page<ViewInfo> pcsDatas=pageService.getName(page,limit);
         map.put("totalRecord",pcsDatas.getTotalElements());
         map.put("data", BeanUtil.AssemblyUtil(pcsDatas));
         return map;
@@ -78,10 +78,10 @@ public class MainController {
      */
     @RequestMapping("/findAllSex")
     @ResponseBody
-    public Map<String,ArrayList> findSexAll(int start, int limit){
+    public Map<String,ArrayList> findSexAll(int start, int limit,int page){
         // 内存数据库操作
         Map map =new HashMap<String,FpbData>();
-        Page<ViewInfo> pcsDatas=pageService.getSex(start,limit);
+        Page<ViewInfo> pcsDatas=pageService.getSex(page,limit);
         map.put("totalRecord",pcsDatas.getTotalElements());
         map.put("data",BeanUtil.AssemblyUtil(pcsDatas));
         return map;
@@ -92,10 +92,10 @@ public class MainController {
      */
     @RequestMapping("/findAllNation")
     @ResponseBody
-    public Map<String,ArrayList> findNationAll(int start, int limit){
+    public Map<String,ArrayList> findNationAll(int start, int limit,int page){
         // 内存数据库操作
         Map map =new HashMap<String,FpbData>();
-        Page<ViewInfo> pcsDatas=pageService.getNation(start,limit);
+        Page<ViewInfo> pcsDatas=pageService.getNation(page,limit);
         map.put("totalRecord",pcsDatas.getTotalElements());
         map.put("data",BeanUtil.AssemblyUtil(pcsDatas));
         return map;
@@ -106,10 +106,10 @@ public class MainController {
      */
     @RequestMapping("/findAllHouseholType")
     @ResponseBody
-    public Map<String,ArrayList> HouseholType(int start, int limit){
+    public Map<String,ArrayList> HouseholType(int start, int limit,int page){
         // 内存数据库操作
         Map map =new HashMap<String,FpbData>();
-        Page<ViewInfo> pcsDatas=pageService.getHouseholType(start,limit);
+        Page<ViewInfo> pcsDatas=pageService.getHouseholType(page,limit);
         map.put("totalRecord",pcsDatas.getTotalElements());
         map.put("data",BeanUtil.AssemblyUtil(pcsDatas));
         return map;
@@ -120,10 +120,10 @@ public class MainController {
      */
     @RequestMapping("/findAllPersonStatus")
     @ResponseBody
-    public Map<String,ArrayList> findPersonStatusAll(int start, int limit){
+    public Map<String,ArrayList> findPersonStatusAll(int start, int limit,int page){
         // 内存数据库操作
         Map map =new HashMap<String,FpbData>();
-        Page<ViewInfo> pcsDatas=pageService.getPersonStatus(start,limit);
+        Page<ViewInfo> pcsDatas=pageService.getPersonStatus(page,limit);
         map.put("totalRecord",pcsDatas.getTotalElements());
         map.put("data",BeanUtil.AssemblyUtil(pcsDatas));
         return map;
@@ -134,10 +134,10 @@ public class MainController {
      */
     @RequestMapping("/findAllNotexist")
     @ResponseBody
-    public Map<String,ArrayList> findNotexistAll(int start, int limit){
+    public Map<String,ArrayList> findNotexistAll(int start, int limit,int page){
         // 内存数据库操作
         Map map =new HashMap<String,FpbData>();
-        Page<FpbData> pcsDatas=pageService.getNotexist(start,limit);
+        Page<FpbData> pcsDatas=pageService.getNotexist(page,limit);
         map.put("totalRecord",pcsDatas.getTotalElements());
         map.put("data",pcsDatas.getContent());
         return map;
