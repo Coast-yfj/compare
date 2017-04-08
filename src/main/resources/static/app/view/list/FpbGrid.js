@@ -156,6 +156,10 @@ Ext.define('compare.view.list.FpbGrid', {
 
     bbar: {
         xtype: 'pagingtoolbar',
+        beforePageText:'第',
+        afterPageText:'页,共{0}页',
+        displayMsg: '当前显示 {0} - {1} 共 {2}条数据',
+        emptyMsg: "没有数据",
         displayInfo: true
     }
 });

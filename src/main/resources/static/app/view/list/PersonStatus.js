@@ -166,8 +166,10 @@ Ext.define('compare.view.list.PersonStatus', {
     bbar: {
         xtype: 'pagingtoolbar',
         displayInfo: true,
-        displayMsg: 'Displaying topics {0} - {1} of {2}',
-        emptyMsg: "No topics to display",
+        beforePageText:'第',
+        afterPageText:'页,共{0}页',
+        displayMsg: '当前显示 {0} - {1} 共 {2}条数据',
+        emptyMsg: "没有数据",
         plugins: 'ux-progressbarpager'
     }
 
