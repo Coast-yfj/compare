@@ -6,7 +6,6 @@ import com.fupin.domain.PcsData;
 import com.fupin.domain.PcsRepository;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.jeecgframework.poi.excel.ExcelImportUtil;
 import org.jeecgframework.poi.excel.entity.ImportParams;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,8 +53,7 @@ public class UploadController {
                     params.setSheetNum( wb.getNumberOfSheets());
                      list = ExcelImportUtil.importExcel(file.getInputStream(), FpbData.class, params);
                 } else if ("xlsx".equals(fileType)) {
-                    wb = new XSSFWorkbook(is);
-                    params.setSheetNum( wb.getNumberOfSheets());
+                    params.setSheetNum(1000);
                       list = ExcelImportUtil.importExcelBySax(file.getInputStream(), FpbData.class, params);
                 }
 
@@ -76,12 +74,23 @@ public class UploadController {
     @ResponseBody
     public Map uploadPcs(@RequestParam("pcsselectexcel")MultipartFile file){
         Map map=new HashMap<>();
+        Workbook wb = null;
+        List<PcsData>   list=new ArrayList<>();
         if(!file.isEmpty()){
             ImportParams params = new ImportParams();
             try {
-                HSSFWorkbook workbook= new HSSFWorkbook(file.getInputStream());
-                params.setSheetNum( workbook.getNumberOfSheets());
-                pcsRepository.save(ExcelImportUtil.importExcel(file.getInputStream(), PcsData.class, params));
+                String  filename=file.getOriginalFilename();
+                String fileType = filename.substring(filename.lastIndexOf(".") + 1, filename.length());
+                InputStream is=file.getInputStream();
+                if ("xls".equals(fileType)) {
+                    wb = new HSSFWorkbook(is);
+                    params.setSheetNum( wb.getNumberOfSheets());
+                    list = ExcelImportUtil.importExcel(file.getInputStream(), PcsData.class, params);
+                } else if ("xlsx".equals(fileType)) {
+                    params.setSheetNum(1000);
+                    list = ExcelImportUtil.importExcelBySax(file.getInputStream(), PcsData.class, params);
+                }
+                pcsRepository.save(list);
             } catch (Exception e) {
                 e.printStackTrace();
             }
