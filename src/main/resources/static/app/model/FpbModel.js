@@ -30,6 +30,11 @@ Ext.define("compare.model.FpbModel", {
         { name: 'rjsr', type: 'string' },
         { name: 'phone', type: 'string' },
         { name: 'bankname', type: 'string' },
-        { name: 'bankcard', type: 'string' }
+        { name: 'bankcard', type: 'string' },
+        { name: 'pname', type: 'string' },
+        { name: 'psex', type: 'string' },
+        { name: 'pnation', type: 'string' },
+        { name: 'person_STATUS', type: 'string' },
+        { name: 'househol_TYPE', type: 'string' }
     ]
 });

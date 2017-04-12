@@ -9,7 +9,7 @@ Ext.define('compare.view.list.HouseholType', {
     collapsible: true,
     frame: true,
     width: '100%',
-    height: 800,
+    height: 600,
     resizable: true,
 
     requires: [
@@ -26,6 +26,11 @@ Ext.define('compare.view.list.HouseholType', {
     }],
     store : Ext.create('compare.store.HouseholTypeStore'),
     columns: [{
+        text: '户类型',
+        dataIndex: 'househol_TYPE',
+        sortable: true,
+        width: 85
+    },{
         text: '县(市、区、旗)',
         dataIndex: 'county',
         sortable: true,

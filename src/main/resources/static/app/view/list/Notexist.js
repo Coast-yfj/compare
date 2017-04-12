@@ -9,7 +9,7 @@ Ext.define('compare.view.list.Notexist', {
     collapsible: true,
     frame: true,
     width: '100%',
-    height: 800,
+    height: 600,
     resizable: true,
 
     requires: [

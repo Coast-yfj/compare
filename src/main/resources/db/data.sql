@@ -26,13 +26,13 @@ ID IDENTITY PRIMARY KEY,
  zyzpyy varchar(20),
  rjsr varchar(20),
  phone varchar(20),
- bankname varchar(20),
+ bankname varchar(50),
  pname  varchar(50),
  psex    varchar(10),
  pnation  varchar(30),
  househol_type varchar(50),
  person_status varchar(50),
- bankcard varchar(20)
+ bankcard varchar(30)
 
 );
 

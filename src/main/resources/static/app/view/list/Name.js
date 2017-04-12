@@ -9,7 +9,7 @@ Ext.define('compare.view.list.Name', {
     collapsible: true,
     frame: true,
     width: '100%',
-    height: 800,
+    height: 600,
     resizable: true,
 
     requires: [
@@ -53,6 +53,11 @@ Ext.define('compare.view.list.Name', {
     },{
         text: '姓名',
         dataIndex: 'name',
+        width: 80,
+        sortable: true
+    },{
+        text: '正确姓名',
+        dataIndex: 'pname',
         width: 80,
         sortable: true
     },{

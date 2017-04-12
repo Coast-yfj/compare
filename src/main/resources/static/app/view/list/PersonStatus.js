@@ -9,7 +9,7 @@ Ext.define('compare.view.list.PersonStatus', {
     collapsible: true,
     frame: true,
     width: '100%',
-    height: 800,
+    height: 600,
     resizable: true,
 
     requires: [
@@ -27,7 +27,12 @@ Ext.define('compare.view.list.PersonStatus', {
         }
     }],
     store : Ext.create('compare.store.PersonStatusStore'),
-    columns: [{
+    columns: [ {
+        text: '人员状态',
+        dataIndex: 'person_STATUS',
+        sortable: true,
+        width: 75
+    },{
         text: '县(市、区、旗)',
         dataIndex: 'county',
         sortable: true,

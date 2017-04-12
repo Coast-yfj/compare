@@ -9,7 +9,7 @@ Ext.define('compare.view.list.Nation', {
     collapsible: true,
     frame: true,
     width: '100%',
-    height: 800,
+    height: 600,
     resizable: true,
 
     requires: [
@@ -81,7 +81,13 @@ Ext.define('compare.view.list.Nation', {
         dataIndex: 'nation',
         width: 80,
         sortable: true
-    },{
+    },
+        {
+            text: '正确民族',
+            dataIndex: 'pnation',
+            width: 80,
+            sortable: true
+        },{
         text: '文化程度',
         dataIndex: 'cultural_LEVEL',
         width: 80,
