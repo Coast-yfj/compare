@@ -30,12 +30,7 @@ public class ExportController {
     public Map export()  {
         Map map=new HashMap<>();
         try {
-            exportService.exprorthHouseholType();
-            exportService.exprortName();
-            exportService.exprortNation();
-            exportService.exprortSex();
-            exportService.exprortPersonStatus();
-            exportService.exprortNotExist();
+            exportService.exprotAll();
             map.put("success","true");
         } catch (Exception e) {
             e.printStackTrace();
