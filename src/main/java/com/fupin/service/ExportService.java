@@ -57,8 +57,8 @@ return list;
         FileUtil.writeToFile("1姓名错误", "姓名错误", "数据", this.exprortName());
         FileUtil.writeToFile("2性别错误", "性别错误", "数据", this.exprortSex());
         FileUtil.writeToFile("3民族错误", "民族错误", "数据", this.exprortNation());
-        FileUtil.writeToFile("4人员状态错误", "人员状态错误", "数据", this.exprortPersonStatus());
-        FileUtil.writeToFile("5户类型错误", "户类型错误", "数据", this.exprorthHouseholType());
+        FileUtil.writeToFile("4户类型错误", "户类型错误", "数据", this.exprorthHouseholType());
+        FileUtil.writeToFile("5人员状态错误", "人员状态错误", "数据", this.exprortPersonStatus());
         FileUtil.writeToFile("6身份证号不存在", "不存在身份证", "数据", this.exprortNotExist());
     }
 
