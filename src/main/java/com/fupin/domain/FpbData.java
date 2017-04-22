@@ -20,6 +20,8 @@ public class FpbData implements Serializable  {
     @Id
     @GeneratedValue
     private  int ID;
+    @Excel(name="序号")
+    private  int XH;
     @Excel(name="县(市、区、旗)")
     private  String COUNTY;
     @Excel(name="镇(乡)")
@@ -90,6 +92,14 @@ public class FpbData implements Serializable  {
     @Excel(name="公安人员状态")
     private String PERSON_STATUS;
 
+    public int getXH() {
+        return XH;
+    }
+
+    public void setXH(int XH) {
+        this.XH = XH;
+    }
+
     public String getPNAME() {
         return PNAME;
     }
@@ -133,7 +143,8 @@ public class FpbData implements Serializable  {
     public FpbData() {
     }
 
-    public FpbData(String COUNTY, String TOWN, String VILLAGE, String HOUSEHOLD_NUM, String PERSON_NUMBER, String NAME, String SEX, String IDENTIFICATION_NUMBER, String NUM, String RELATION, String NATION, String CULTURAL_LEVEL, String SCHOOL_IS, String HEALTH_STATUS, String LABOR_ABILITY, String WORKING_CONDITION, String WORKING_TIME, String IS_XNH, String IS_XYLBX, String IS_CZYLBX, String TPSX, String PKHSX, String ZYZPYY, String RJSR, String PHONE, String BANKNAME, String BANKCARD, String PNAME, String PSEX, String PNATION, String HOUSEHOL_TYPE, String PERSON_STATUS) {
+    public FpbData(int XH, String COUNTY, String TOWN, String VILLAGE, String HOUSEHOLD_NUM, String PERSON_NUMBER, String NAME, String SEX, String IDENTIFICATION_NUMBER, String NUM, String RELATION, String NATION, String CULTURAL_LEVEL, String SCHOOL_IS, String HEALTH_STATUS, String LABOR_ABILITY, String WORKING_CONDITION, String WORKING_TIME, String IS_XNH, String IS_XYLBX, String IS_CZYLBX, String TPSX, String PKHSX, String ZYZPYY, String RJSR, String PHONE, String BANKNAME, String BANKCARD, String PNAME, String PSEX, String PNATION, String HOUSEHOL_TYPE, String PERSON_STATUS) {
+        this.XH = XH;
         this.COUNTY = COUNTY;
         this.TOWN = TOWN;
         this.VILLAGE = VILLAGE;

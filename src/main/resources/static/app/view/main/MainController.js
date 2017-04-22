@@ -119,7 +119,6 @@ Ext.define('compare.view.main.MainController', {
             }
         });
     },
-
     onMenuClick: function (tabs, newTab, oldTab) {
         if(newTab.title=='户类型不对'){
             Ext.widget('mainHouseholType').store.reload();

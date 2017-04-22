@@ -1,6 +1,7 @@
 DROP TABLE IF EXISTS fpb;
 CREATE TABLE fpb(
 ID IDENTITY PRIMARY KEY,
+xh INT ,
  county  varchar(100),
  town    varchar(255),
  village  varchar(255),
